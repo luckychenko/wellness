@@ -6,6 +6,9 @@ Build out this figma details to detail with HTML and CSS. **It is important to m
 (https://www.figma.com/file/URkPhPHkkWREdiIB21uvfE/Web-Development-Training?type=design&node-id=0%3A1&mode=design&t=KXSthmp0easnvUhR-1)
 
 
+In trying to acheive this, I used the oppurtunity to tryout **CSS Nesting.**
+
+
 __Deskstop view__
 ![image](https://github.com/luckychenko/wellness/assets/23339175/81d67405-01bf-42f6-914c-9b1459af02ac)
 
