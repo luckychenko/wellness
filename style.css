@@ -1,0 +1,368 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+
+
+:root {
+    --bg-green: hsla(174, 62%, 47%, 0.04);
+    --cl-green: hsla(174, 62%, 47%, 1);
+    --cl-black: hsla(174, 100%, 2%, 1);
+    --cl-grey: hsla(0, 0%, 45%, 1);
+    --text-headings: hsla(208, 96%, 10%, 1);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+html, body {
+    font-family: 'Poppins', sans-serif;
+    /* width: 1440px; */
+    /* height: 840px;   */
+    /* position: relative; */
+    /* width: 100vw;
+    height: 100vh;  */
+}
+
+
+main { 
+    /* width: 100%;
+    height: 100%; */
+    background-color: var(--bg-green);
+    display: flex;
+    gap: 120px;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 140px;
+}
+
+/* trying out CSS Nesting */
+
+.welcome-note {  
+    flex: 1 1 40%;
+    /* inline-size: auto; */
+/* tryout css nesting */
+    &>img {
+        width: 77.333px;
+        height: 80px;
+        filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.10)); 
+    }
+
+    &>h2 {
+        color: var(--cl-black);
+        font-family: 'Poppins', sans-serif;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 50px;
+        letter-spacing: -0.8px;
+        margin-block-start: 50px;
+        width: max-content;
+        /* height: 50px; */
+    }
+
+    &>p {
+        color: var(--cl-grey);
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 25px; 
+        margin-block-start: 20px;
+        /* block-size: 75px; */
+    }
+
+    /* hide or show the paragraph text to display */
+    &>p.web-text {
+        display: block;
+    }
+
+    &>p.mobile-text {
+        display: none;
+    }
+}
+
+div.signup-form {
+    flex: 1 1 60%;
+    /* inline-size: 100%; */
+    border-radius: 6px;
+    box-shadow: 0px 4px 50px 0px rgba(4, 8, 19, 0.10);
+    background: #FFF;   
+    padding: 40px;
+    display: flex;
+    flex-direction: column; 
+    /* margin: 81px 0; */
+    position:relative;
+
+    & .form-group {
+        display: flex;
+        gap:24px;
+        margin-block-end: 30px;
+        
+        &:last-child {         
+            margin-block-end: 16px;
+        }
+        & .form-inline {
+            flex: 1 1 50%;
+            
+            & label {
+                display: block;
+                color: var(--text-headings);
+                font-weight: 600;
+                line-height: normal;
+                letter-spacing: 0.1px;
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+            & input, select, button {
+                width: 100%;
+                height: 48px;
+                padding: 14px 16px;
+        
+               
+                &:hover{
+                    border: 1px solid var(--cl-green);
+                }
+                &:focus {
+                    outline: 1px solid var(--cl-green);
+                }                
+                &:focus-visible {
+                    border: 1px solid var(--cl-green);
+                }
+
+                &[name="dob"] {
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    background-size: 24px;
+                    background: url(calendar-alt.svg)  no-repeat right center;
+                    background-origin: content-box;
+                    border-width: thin;
+                    /* border: 1px solid rgb(118, 118, 118); */
+                }
+                
+                &[name="pwd"] {
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    background-size: 16px;
+                    background: url(eye-show.svg)  no-repeat right center;
+                    background-origin: content-box;
+                    border-width: thin;
+                    /* border: 1px solid rgb(118, 118, 118) !important; */
+                }
+                                
+                &[name="gender"],&[name="act"] {
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    background-size: 16px;
+                    background: url(u_angle-down.svg)  no-repeat right center;
+                    background-origin: content-box;
+                    color: rgb(118, 118, 118);
+                }
+
+            }
+            & button {
+                background: var(--cl-green);
+                color: #FFF;   
+                border: none;     
+            }            
+        }
+    }
+
+    &>p {
+        margin: 0 auto;
+        font-weight: 600;
+        line-height: 25px; 
+        font-size: 12px; 
+        text-align: center;
+        &>a {
+            color: var(--cl-green);
+            font-style: normal;
+            font-weight: 500;
+            text-decoration-line: underline;
+        }
+    }
+
+}
+
+
+
+/* big tablet/screen view set */
+
+@media only screen and (min-width: 768px) and (max-width: 1050px) {
+
+    main {
+        gap: 30px;
+        padding: 80px 80px;
+        align-items: flex-start;
+    }
+
+    div.signup-form { 
+        padding: 24px 16px 0px 16px;
+        flex-direction: column; 
+        margin: 0px 0 24px 0;
+        width: 100%;
+    
+        & .form-group {            
+            flex-direction: column;
+            gap:24px;
+            
+            &:last-child {         
+                margin-block-end: 30px;
+            }
+            & .form-inline {
+                flex: 1 1 100%;
+            }
+        }
+
+    }
+
+}
+
+/*small tablets view */
+@media only screen and (min-width: 450px) and (max-width: 768px) {
+
+    main {     
+        flex-direction: column;
+        gap: 40px;
+        padding: 74px 24px;
+    }
+
+    .welcome-note {  
+        inline-size: auto;
+    
+        &>img {
+            width: 38.667px;
+            height: 40px;
+            filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.10)); 
+        }
+    
+        &>h2 {
+            font-size: 30px;
+            line-height: normal;
+            margin-block-start: 40px;
+            /* height: 30px; */
+        }
+
+    /* hide or show the paragraph text to display depend on mobile */
+        &>p.mobile-text {
+            display: block;
+        }
+        &>p.web-text {
+            display: none;
+        }
+    }
+
+
+    div.signup-form { 
+        padding: 24px 16px 0px 16px;
+        flex-direction: column; 
+        margin: 0px 0 24px 0;
+        width: 100%;
+    
+        & .form-group {            
+            /* flex-direction: column;
+            gap:24px; */
+            
+            &:last-child {         
+                margin-block-end: 30px;
+            }
+            & .form-inline {
+                flex: 1 1 100%;
+            }
+        }
+
+        &>p {            
+            text-align: center;   
+            padding: 0 5px; 
+            position: absolute;
+            /*to achieve the p offset in figma */
+            bottom: -6em;   /* margin: 0 auto -54px auto; */
+            width:80vw;
+        }
+    }
+}
+
+
+
+/*mobile view */
+@media only screen and (max-width: 450px) {
+
+    main {     
+        flex-direction: column;
+        gap: 40px;
+        padding: 74px 24px;
+    }
+
+    .welcome-note {  
+        inline-size: auto;
+    
+        &>img {
+            width: 38.667px;
+            height: 40px;
+            filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.10)); 
+        }
+    
+        &>h2 {
+            font-size: 30px;
+            line-height: normal;
+            margin-block-start: 40px;
+            /* height: 30px; */
+        }
+
+    /* hide or show the paragraph text to display depend on mobile */
+        &>p.mobile-text {
+            display: block;
+        }
+        &>p.web-text {
+            display: none;
+        }
+    }
+
+
+    div.signup-form { 
+        padding: 24px 16px 0px 16px;
+        flex-direction: column; 
+        margin: 0px 0 24px 0;
+        width: 100%;
+    
+        & .form-group {            
+            flex-direction: column;
+            gap:24px;
+            
+            &:last-child {         
+                margin-block-end: 30px;
+            }
+            & .form-inline {
+                flex: 1 1 100%;
+            }
+        }
+
+        &>p {            
+            text-align: center;   
+            padding: 0 5px; 
+            position: absolute;
+            /*to achieve the p offset in figma */
+            bottom: -6em;   /* margin: 0 auto -54px auto; */
+            width:80vw;
+        }
+    }
+}
+
+
+
+/* label[for="dob"]+input[name="dob"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+} */
+
+/* [name="pwd"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url(eye-show.svg)  no-repeat right center;
+} */
